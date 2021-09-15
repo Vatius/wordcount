@@ -1,16 +1,13 @@
 package main
 
 import (
-	"bufio"
+	"flag"
 	"fmt"
-	"os"
 	"strings"
 )
 
 func main() {
-	var input string
-	scanner := bufio.NewReader(os.Stdin)
-	input, _ = scanner.ReadString('\n')
-	input = strings.Replace(input, "\n", "", 1)
+	flag.Parse()
+	input := strings.Join(flag.Args(), "")
 	fmt.Print(len(strings.Split(input, " ")))
 }
